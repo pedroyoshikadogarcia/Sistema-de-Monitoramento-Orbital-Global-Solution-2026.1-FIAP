@@ -82,3 +82,36 @@ void analisarCondicoes() {
             printf(GREEN "[OK] Sistemas nominais.\n" RESET);
     }  
 }
+
+int main() {
+    int opcao;
+    
+    do {
+        printf("\n   SISTEMA DE MONITORAMENTO ORBITAL  \n");
+        printf("1. Inserir dados\n");
+        printf("2. Visualizar status geral (Historico)\n");
+        printf("3. Executar analise\n");
+        printf("4. Encerrar sistema\n");
+        printf("Escolha sua opcao: ");
+        scanf("%d", &opcao);
+        
+        switch(opcao) {
+            case 1:
+                inserirDados();
+                break;
+            case 2:
+                visualizarStatus();
+                break;
+            case 3:
+                analisarCondicoes();
+                break;
+            case 4:
+                printf(CYAN "\nDesligando paineis... Missao encerrada.\n" RESET);
+                break;
+            default:
+                printf(YELLOW "\nOpcao invalida. Tenta de novo.\n" RESET);
+        }
+    } while(opcao != 4);
+
+    return 0;
+}
