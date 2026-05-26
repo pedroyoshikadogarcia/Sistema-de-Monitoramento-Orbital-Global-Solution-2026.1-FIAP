@@ -1,4 +1,4 @@
-# 🚀 Sistema de Monitoramento Orbital — Global Solution 2026.1
+#  Sistema de Monitoramento Orbital — Global Solution 2026.1
 
 Este projeto consiste num sistema em linguagem C desenvolvido para monitorizar informações críticas de uma missão espacial experimental. O software analisa telemetrias reais/simuladas obtidas através dos sensores da nave e emite alertas automáticos dependendo do status operacional dos sistemas.
 
