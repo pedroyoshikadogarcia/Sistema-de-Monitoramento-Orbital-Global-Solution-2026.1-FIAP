@@ -39,3 +39,46 @@ void inserirDados() {
     total_leituras++;
     printf(GREEN "Dados salvos com sucesso na base de registro!\n" RESET);
 }
+
+void visualizarStatus() {
+    printf(CYAN "\n--- Historico de Leituras ---\n" RESET);
+    if (total_leituras == 0) {
+        printf(YELLOW "Nenhum dado registrado ainda. O historico esta vazio.\n" RESET);
+        return;
+    }
+    
+    for (int i = 0; i < total_leituras; i++) {
+        printf("Leitura %02d | Temp: %.2fC | Energia: %d%% | Comms: %s\n", 
+               i + 1, 
+               temperaturas[i], 
+               energias[i], 
+               comunicacoes[i] == 1 ? "OK" : "FALHA");
+    }
+}
+
+void analisarCondicoes() {
+    if (total_leituras == 0) {
+        printf(YELLOW "\nNenhum dado para analisar. Insira dados primeiro, comandante!\n" RESET);
+        return;
+    }
+    
+    for (int i = 0; i < total_leituras; i++) {
+        printf(CYAN "\n--- Analise da Leitura %d ---\n" RESET, i + 1);
+        int tudo_ok = 1;
+ 
+        if (temperaturas[i] > 80) {
+            printf(RED "[!] ALERTA DE SUPERAQUECIMENTO: %.2fC\n" RESET, temperaturas[i]);
+            tudo_ok = 0;
+        }
+        if (energias[i] < 20) {
+            printf(YELLOW "[!] ECONOMIA DE ENERGIA  : %d%%\n" RESET, energias[i]);
+            tudo_ok = 0;
+        }
+        if (comunicacoes[i] == 0) {
+            printf(RED "[!] FALHA DE COMUNICACAO!\n" RESET);
+            tudo_ok = 0;
+        }
+        if (tudo_ok)
+            printf(GREEN "[OK] Sistemas nominais.\n" RESET);
+    }  
+}
