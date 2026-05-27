@@ -18,7 +18,7 @@ Este projeto consiste num sistema em linguagem C desenvolvido para monitorizar i
 
 **Estrutura e Lógica do Código** 
 O software foi desenhado seguindo as melhores práticas da programação estruturada:
-- **Modularização:** Divisão limpa de responsabilidades em funções dedicadas (`inserirDados`, `visualizarStatus`, `analisarCondicoes`), mantendo a função `main` focada apenas no controlo do fluxo principal.
+- **Modularização:** Divisão limpa de responsabilidades em funções dedicadas (`inserirDados`, `visualizarStatus`, `analisarCondicoes`), mantendo a função `main` focada apenas no controle do fluxo principal.
 - **Menu Interativo Dinâmico:** Estrutura de repetição `do-while` integrada a um seletor `switch()`, permitindo navegação contínua até o encerramento explícito da missão.
 - **Verificação Condicional Independente:** Uso de condicionais `if` independentes na análise de falhas, o que permite disparar múltiplos alertas simultâneos caso mais de um sistema falhe ao mesmo tempo.
 
