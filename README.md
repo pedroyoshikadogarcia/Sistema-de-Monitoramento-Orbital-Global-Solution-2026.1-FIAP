@@ -31,3 +31,10 @@ O software foi desenhado seguindo as melhores práticas da programação estrutu
 3. Abra o terminal na raiz do projeto e compile o código-fonte:
    ```bash
    gcc main.c -o monitoramento
+   ```
+   
+   ---
+   
+**Link do Video no YouTube**
+
+  https://youtu.be/R_Vc7WxVUeY
